@@ -1,33 +1,24 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import IllustrationList from "./components/IllustrationList";
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const title = "Illustration details";
+
+  const illustrations = [
+    { name: "Sunset", year: 2022, date: "05-15" },
+    { name: "Mountain", year: 2023, date: "08-22" },
+    { name: "Ocean", year: 2024, date: "11-30" },
+    { name: "Sky", year: 2026, date: "11-30" },
+  ];
+
+  const handleBtnClick = () => {
+    alert("Button clicked!");
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Welcome to the React App</h1>
+      <h2>{title}</h2>
+      <IllustrationList name={title} year={"2026"} date={"12-01"} illusList={illustrations} btnClick={handleBtnClick} />
     </>
   );
 };
