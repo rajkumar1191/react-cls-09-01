@@ -107,4 +107,10 @@ createRoot(document.getElementById("root")).render(
 
   getData();  
 
+
+  controlled vs uncontrolled components -
+
+  controlled components - form data is handled by React component state
+  uncontrolled components - form data is handled by the DOM itself
+
 */
