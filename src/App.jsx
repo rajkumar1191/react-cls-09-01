@@ -3,6 +3,8 @@ import "./App.css";
 import style from "./App1.module.css";
 import AddIllustration from "./components/AddIllustration";
 import { useState } from "react";
+import AddIllustrationReducer from "./components/AddIllustrationReducer";
+import AddIllustrationReducerWithRef from "./components/AddIllustrationReducerWithRef";
 
 const App = () => {
   const title = "Illustration details";
@@ -37,7 +39,8 @@ const App = () => {
       <h2 style={{ fontSize: "1.5rem", color: isCompleted ? "#ccc" : "red" }}>
         {title}
       </h2>
-      <AddIllustration addForm={handleFormSubmit} />
+      <AddIllustrationReducer addForm={handleFormSubmit} />
+      <AddIllustrationReducerWithRef addForm={handleFormSubmit} />
       <IllustrationList
         name={title}
         year={"2026"}

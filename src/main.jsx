@@ -113,4 +113,13 @@ createRoot(document.getElementById("root")).render(
   controlled components - form data is handled by React component state
   uncontrolled components - form data is handled by the DOM itself
 
+
+  useReducer - alternative to useState for complex state management
+  
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useRef - mutable ref object to persist values across renders without causing re-renders
+  using useRef - to access DOM elements directly, avoid re-renders, store mutable values
+
+  const inputRef = useRef(null);
 */
