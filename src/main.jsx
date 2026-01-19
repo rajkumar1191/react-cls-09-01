@@ -2,11 +2,14 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
+import { IllustrationProvider } from "./context/IllustrationProvider";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-  </StrictMode>
+    <IllustrationProvider>
+      <App />
+    </IllustrationProvider>
+  </StrictMode>,
 );
 
 /*
@@ -122,4 +125,20 @@ createRoot(document.getElementById("root")).render(
   using useRef - to access DOM elements directly, avoid re-renders, store mutable values
 
   const inputRef = useRef(null);
+
+
+  parent -> child -> grandchild -> great grandchild
+  {
+    name: 'John',
+    age: 30,
+    address: {
+      street: '123 Main St',
+      city: 'New York',
+      country: 'USA'
+    }
+  }
+  
+  prop drilling - passing props through multiple levels of components
+
+  useContext - to avoid prop drilling by providing global state accessible by any component in the tree
 */

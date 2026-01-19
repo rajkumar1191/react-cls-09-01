@@ -1,33 +1,30 @@
 import IllustrationList from "./components/IllustrationList";
 import "./App.css";
 import style from "./App1.module.css";
-import AddIllustration from "./components/AddIllustration";
-import { useState } from "react";
-import AddIllustrationReducer from "./components/AddIllustrationReducer";
-import AddIllustrationReducerWithRef from "./components/AddIllustrationReducerWithRef";
+import AddIllustrationReducerByContext from "./components/AddIllustrationReducerByContext";
 
 const App = () => {
   const title = "Illustration details";
   const isCompleted = false;
 
-  let illustrations = [
-    { name: "Sunset", year: 2022, date: "05-15" },
-    { name: "Mountain", year: 2023, date: "08-22" },
-    { name: "Ocean", year: 2024, date: "11-30" },
-    { name: "Sky", year: 2026, date: "11-30" },
-  ];
+  // let illustrations = [
+  //   { name: "Sunset", year: 2022, date: "05-15" },
+  //   { name: "Mountain", year: 2023, date: "08-22" },
+  //   { name: "Ocean", year: 2024, date: "11-30" },
+  //   { name: "Sky", year: 2026, date: "11-30" },
+  // ];
 
-  const [illustrationList, setIllustrationList] = useState(illustrations);
+  // const [illustrationList, setIllustrationList] = useState(illustrations);
 
-  const handleBtnClick = () => {
-    alert("Button clicked!");
-  };
+  // const handleBtnClick = () => {
+  //   alert("Button clicked!");
+  // };
 
-  const handleFormSubmit = (data) => {
-    console.log("Form submitted", data);
-    setIllustrationList([...illustrationList, data]);
-    console.log("Updated illustrations", illustrations);
-  };
+  // const handleFormSubmit = (data) => {
+  //   console.log("Form submitted", data);
+  //   setIllustrationList([...illustrationList, data]);
+  //   console.log("Updated illustrations", illustrations);
+  // };
 
   return (
     <>
@@ -39,14 +36,14 @@ const App = () => {
       <h2 style={{ fontSize: "1.5rem", color: isCompleted ? "#ccc" : "red" }}>
         {title}
       </h2>
-      <AddIllustrationReducer addForm={handleFormSubmit} />
-      <AddIllustrationReducerWithRef addForm={handleFormSubmit} />
+      <AddIllustrationReducerByContext />
       <IllustrationList
         name={title}
         year={"2026"}
         date={"12-01"}
-        illusList={illustrationList}
-        btnClick={handleBtnClick}
+        // illusList={illustrationList}
+        // btnClick={handleBtnClick}
+        // addForm={handleFormSubmit}
       />
     </>
   );
