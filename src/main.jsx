@@ -141,4 +141,21 @@ createRoot(document.getElementById("root")).render(
   prop drilling - passing props through multiple levels of components
 
   useContext - to avoid prop drilling by providing global state accessible by any component in the tree
+
+  useEffect - side effects in functional components (data fetching, subscriptions, manual DOM manipulations)
+
+  useMemo - memoize expensive calculations to optimize performance
+
+  const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+
+  useCallback - memoize functions to prevent unnecessary re-creations
+
+  const memoizedCallback = useCallback(() => {
+    doSomething(a, b);
+  }, [a, b]);
+
+  React.memo - higher order component to memoize functional components and prevent unnecessary re-renders
+
+  export default React.memo(ComponentName);
+
 */

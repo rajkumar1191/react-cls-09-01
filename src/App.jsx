@@ -2,6 +2,7 @@ import IllustrationList from "./components/IllustrationList";
 import "./App.css";
 import style from "./App1.module.css";
 import AddIllustrationReducerByContext from "./components/AddIllustrationReducerByContext";
+import IllustrationDashboard from "./components/IllustrationDashboard";
 
 const App = () => {
   const title = "Illustration details";
@@ -36,7 +37,8 @@ const App = () => {
       <h2 style={{ fontSize: "1.5rem", color: isCompleted ? "#ccc" : "red" }}>
         {title}
       </h2>
-      <AddIllustrationReducerByContext />
+      <IllustrationDashboard />
+      {/* <AddIllustrationReducerByContext />
       <IllustrationList
         name={title}
         year={"2026"}
@@ -44,7 +46,7 @@ const App = () => {
         // illusList={illustrationList}
         // btnClick={handleBtnClick}
         // addForm={handleFormSubmit}
-      />
+      /> */}
     </>
   );
 };
