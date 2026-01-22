@@ -2,7 +2,7 @@ import React from "react";
 import "./IllustrationList.css";
 
 const IllustrationList1 = ({ illustrations, onSelect }) => {
-  console.log("IllustrationList1 rendered", illustrations);
+  // console.log("IllustrationList1 rendered", illustrations);
   return (
     <div>
       <div className="illusContainer">

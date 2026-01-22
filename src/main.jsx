@@ -158,4 +158,8 @@ createRoot(document.getElementById("root")).render(
 
   export default React.memo(ComponentName);
 
+
+  npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom
+
+
 */

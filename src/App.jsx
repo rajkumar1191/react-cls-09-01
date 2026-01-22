@@ -1,31 +1,10 @@
-import IllustrationList from "./components/IllustrationList";
 import "./App.css";
 import style from "./App1.module.css";
-import AddIllustrationReducerByContext from "./components/AddIllustrationReducerByContext";
 import IllustrationDashboard from "./components/IllustrationDashboard";
 
 const App = () => {
   const title = "Illustration details";
   const isCompleted = false;
-
-  // let illustrations = [
-  //   { name: "Sunset", year: 2022, date: "05-15" },
-  //   { name: "Mountain", year: 2023, date: "08-22" },
-  //   { name: "Ocean", year: 2024, date: "11-30" },
-  //   { name: "Sky", year: 2026, date: "11-30" },
-  // ];
-
-  // const [illustrationList, setIllustrationList] = useState(illustrations);
-
-  // const handleBtnClick = () => {
-  //   alert("Button clicked!");
-  // };
-
-  // const handleFormSubmit = (data) => {
-  //   console.log("Form submitted", data);
-  //   setIllustrationList([...illustrationList, data]);
-  //   console.log("Updated illustrations", illustrations);
-  // };
 
   return (
     <>
@@ -38,15 +17,6 @@ const App = () => {
         {title}
       </h2>
       <IllustrationDashboard />
-      {/* <AddIllustrationReducerByContext />
-      <IllustrationList
-        name={title}
-        year={"2026"}
-        date={"12-01"}
-        // illusList={illustrationList}
-        // btnClick={handleBtnClick}
-        // addForm={handleFormSubmit}
-      /> */}
     </>
   );
 };

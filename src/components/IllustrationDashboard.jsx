@@ -1,21 +1,15 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import Illustration from "./Illustration";
 import "./IllustrationList.css";
 import IllustrationList1 from "./IllustrationList1";
 
 const IllustrationDashboard = () => {
-  console.log("Parent component rendered");
 
   const [count, setCount] = useState(0);
   const [yearFilter, setYearFilter] = useState(2024);
 
-  // useMemo(() => {}, []);
-  // useCallback(() => {}, []);
-  // useEffect(() => {}, []);
-
-  useEffect(() => {
-    console.log("Year filter changed in Dashboard:", yearFilter);
-  }, [yearFilter]);
+  // useEffect(() => {
+  //   console.log("Year filter changed in Dashboard:", yearFilter);
+  // }, [yearFilter]);
 
   // Memoizing filtered list to prevent unnecessary recalculations
   const filteredList = useMemo(() => {
@@ -25,13 +19,13 @@ const IllustrationDashboard = () => {
       { name: "Ocean", year: 2024, date: "11-30" },
       { name: "Sky", year: 2026, date: "11-30" },
     ];
-    console.log("Filtering illustrations");
+    // console.log("Filtering illustrations");
     return illustrations.filter((illus) => illus.year >= yearFilter);
   }, [yearFilter]);
 
   // useCallback to memoize the handleSelect function
   const handleSelect = useCallback((e) => {
-    console.log("Year filter changed", e.name);
+    console.log("Year filter changed", e);
   }, []);
 
   return (
@@ -42,10 +36,11 @@ const IllustrationDashboard = () => {
       </button>
       <br />
       <br />
-      <label>Filter by Year: </label>
+      <label htmlFor="year">Filter by Year: </label>
       <input
         type="number"
         value={yearFilter}
+        id="year"
         onChange={(e) => setYearFilter(Number(e.target.value))}
       />
       <div className="illusContainer">
