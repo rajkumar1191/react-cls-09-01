@@ -1,22 +1,31 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import style from "./App1.module.css";
-import IllustrationDashboard from "./components/IllustrationDashboard";
+import Home from "./components/Home";
+import AddIllustration from "./components/AddIllustration";
+import IllustrationList from "./components/IllustrationList";
+import Navbar from "./components/Navbar";
+import MainLayout from "./components/MainLayout";
 
 const App = () => {
-  const title = "Illustration details";
-  const isCompleted = false;
-
   return (
     <>
-      <h1 className="title">Welcome to the React App</h1>
-      <p className={style.title}>React Basic Application</p>
-      <p className={isCompleted ? "success" : "error"}>
-        {isCompleted ? "Successfully completed" : "Not completed yet"}
-      </p>
-      <h2 style={{ fontSize: "1.5rem", color: isCompleted ? "#ccc" : "red" }}>
-        {title}
-      </h2>
-      <IllustrationDashboard />
+      {/* <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/add" element={<AddIllustration />} />
+      <Route path="/illustrations" element={<IllustrationList />} />
+      <Route path="*" element={<h1>404 Not Found</h1>} />
+    </Routes> */}
+
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/add" element={<AddIllustration />} />
+          <Route path="/illustrations" element={<IllustrationList />} />
+        </Route>
+        <Route path="*" element={<h1>404 Not Found</h1>} />
+      </Routes>
     </>
   );
 };

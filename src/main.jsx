@@ -3,12 +3,15 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { IllustrationProvider } from "./context/IllustrationProvider";
+import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <IllustrationProvider>
-      <App />
-    </IllustrationProvider>
+    <BrowserRouter>
+      <IllustrationProvider>
+        <App />
+      </IllustrationProvider>
+    </BrowserRouter>
   </StrictMode>,
 );
 
