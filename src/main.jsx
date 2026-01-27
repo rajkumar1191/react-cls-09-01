@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App.jsx";
 import { IllustrationProvider } from "./context/IllustrationProvider";
 import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./context/AuthProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <IllustrationProvider>
-        <App />
-      </IllustrationProvider>
+      <AuthProvider>
+        <IllustrationProvider>
+          <App />
+        </IllustrationProvider>
+      </AuthProvider>
     </BrowserRouter>
   </StrictMode>,
 );
@@ -164,5 +167,33 @@ createRoot(document.getElementById("root")).render(
 
   npm install -D vitest @testing-library/react @testing-library/jest-dom jsdom
 
+  Suspense and lazy loading - code splitting and loading components asynchronously
+
+  const LazyComponent = React.lazy(() => import('./LazyComponent'));
+
+  <Suspense fallback={<div>Loading...</div>}>
+    <LazyComponent />
+  </Suspense>
+
+
+  Perfomance optimization techniques -
+  - useMemo
+  - useCallback
+  - React.memo
+  - code splitting with React.lazy and Suspense
+  - avoiding anonymous functions in JSX
+  - optimizing context value to prevent unnecessary re-renders
+
+  Projects:
+
+  1. illusbook template
+  2. User Management System
+    - Authentication (login, logout)
+    - Protected routes
+    - User roles based access (admin, user)
+    - Profile management
+    - Dashboard
+    - CRUD operations for user data
+    - Redux or useContext for state management
 
 */
