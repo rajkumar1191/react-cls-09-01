@@ -10,9 +10,9 @@ import Login from "./components/Login";
 import { lazy, Suspense } from "react";
 
 const HomePage = lazy(() => import("./components/Home"));
-const AddIllustrationPage = lazy(() => import("./components/AddIllustration"));
+const AddIllustrationPage = lazy(() => import("./components/AddIllustrationReducerByRedux"));
 const IllustrationListPage = lazy(
-  () => import("./components/IllustrationList"),
+  () => import("./components/IllustrationListUsingRedux"),
 );
 
 const App = () => {
